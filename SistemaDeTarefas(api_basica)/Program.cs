@@ -24,6 +24,7 @@ namespace SistemaDeTarefas_api_basica_
                 );
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
             var app = builder.Build();
 
