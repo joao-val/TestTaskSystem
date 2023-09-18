@@ -36,7 +36,7 @@ namespace SistemaDeTarefas_api_basica_.Repositories
         {
             UserModel userById = await GetUserByIdAsync(id);
 
-            if(userById == null)
+            if (userById == null)
             {
                 throw new Exception($"User for this ID: {id} was not found in the dataBase.");
             }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SistemaDeTarefas_api_basica_.Models;
 using SistemaDeTarefas_api_basica_.Repositories.Interfaces;
 
@@ -10,6 +9,7 @@ namespace SistemaDeTarefas_api_basica_.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;

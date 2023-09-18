@@ -40,7 +40,7 @@ namespace SistemaDeTarefas_api_basica_.Repositories
         {
             TaskModel taskById = await GetTaskByIdAsync(id);
 
-            if(taskById == null)
+            if (taskById == null)
             {
                 throw new Exception($"Task for this ID: {id} was not found in the dataBase.");
             }

@@ -7,12 +7,13 @@ namespace SistemaDeTarefas_api_basica_.Data
     public class SistemaDeTarefasDBContext : DbContext
     {
         public SistemaDeTarefasDBContext(DbContextOptions<SistemaDeTarefasDBContext> options)
-            : base (options)
+            : base(options)
         {
         }
 
         public DbSet<UserModel> Users { get; set; }
         public DbSet<TaskModel> Tasks { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());

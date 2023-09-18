@@ -1,11 +1,15 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Refit;
+using SistemaDeTarefas_api_basica_.Authorization;
 using SistemaDeTarefas_api_basica_.Data;
 using SistemaDeTarefas_api_basica_.Integration;
 using SistemaDeTarefas_api_basica_.Integration.Interface;
 using SistemaDeTarefas_api_basica_.Integration.Refit;
 using SistemaDeTarefas_api_basica_.Repositories;
 using SistemaDeTarefas_api_basica_.Repositories.Interfaces;
+using System.Text;
 
 namespace SistemaDeTarefas_api_basica_
 {
@@ -36,6 +40,26 @@ namespace SistemaDeTarefas_api_basica_
                 c.BaseAddress = new Uri("https://viacep.com.br");
             });
 
+            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+
+            builder.Services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -47,8 +71,8 @@ namespace SistemaDeTarefas_api_basica_
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

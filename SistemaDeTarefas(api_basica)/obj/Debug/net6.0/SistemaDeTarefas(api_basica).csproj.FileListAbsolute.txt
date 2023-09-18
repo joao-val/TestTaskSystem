@@ -76,3 +76,4 @@ L:\Joao\CSharp\API\SistemaDeTarefas(api_basica)\SistemaDeTarefas(api_basica)\bin
 L:\Joao\CSharp\API\SistemaDeTarefas(api_basica)\SistemaDeTarefas(api_basica)\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 L:\Joao\CSharp\API\SistemaDeTarefas(api_basica)\SistemaDeTarefas(api_basica)\bin\Debug\net6.0\System.Text.Json.dll
 L:\Joao\CSharp\API\SistemaDeTarefas(api_basica)\SistemaDeTarefas(api_basica)\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+L:\Joao\CSharp\API\SistemaDeTarefas(api_basica)\SistemaDeTarefas(api_basica)\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
