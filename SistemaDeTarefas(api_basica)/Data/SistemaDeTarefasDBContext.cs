@@ -13,11 +13,13 @@ namespace SistemaDeTarefas_api_basica_.Data
 
         public DbSet<UserModel> Users { get; set; }
         public DbSet<TaskModel> Tasks { get; set; }
+        public DbSet<UserAuthModel> userAuths { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new TaskMap());
+            modelBuilder.ApplyConfiguration(new UserAuthMap());
 
             base.OnModelCreating(modelBuilder);
         }

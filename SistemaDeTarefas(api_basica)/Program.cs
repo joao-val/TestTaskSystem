@@ -33,7 +33,9 @@ namespace SistemaDeTarefas_api_basica_
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+            builder.Services.AddScoped<IUserAuthRepository, UserAuthRepository>();
             builder.Services.AddScoped<IViaCepIntegration, ViaCepIntegration>();
+            builder.Services.AddScoped<UserAuthRepository>();
 
             builder.Services.AddRefitClient<IViaCepIntegrationRefit>().ConfigureHttpClient(c =>
             {

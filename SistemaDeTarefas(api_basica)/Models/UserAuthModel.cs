@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeTarefas_api_basica_.Models
 {
-    public class UserAuth
+    public class UserAuthModel
     {
         public int Id { get; set; }
         public string Username { get; set; }

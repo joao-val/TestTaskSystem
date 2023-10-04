@@ -8,7 +8,7 @@ namespace SistemaDeTarefas_api_basica_.Authorization
 {
     public static class TokenService
     {
-        public static string GenetareToken(UserAuth userAuth)
+        public static string GenetareToken(UserAuthModel userAuth)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);

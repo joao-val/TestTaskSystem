@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaDeTarefas_api_basica_.Data;
 
@@ -11,9 +12,10 @@ using SistemaDeTarefas_api_basica_.Data;
 namespace SistemaDeTarefas_api_basica_.Migrations
 {
     [DbContext(typeof(SistemaDeTarefasDBContext))]
-    partial class SistemaDeTarefasDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231004031053_UsuarioAutorizado")]
+    partial class UsuarioAutorizado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
