@@ -14,17 +14,6 @@ namespace SistemaDeTarefas_api_basica_.Repositories
         {
             _dbContext = sistemaDeTarefasDBContext;
         }
-        public static UserAuthModel Get(string username, string password)
-        {
-            var users = new List<UserAuthModel>
-            {
-                new() {Id = 1, Username = "batman", Password = "batman", Role = "manager"},
-                new() {Id = 2, Username = "robin", Password = "robin", Role = "employee"}
-            };
-            return users
-                .FirstOrDefault(x =>
-                x.Username == username && x.Password == password);
-        }
 
         public async Task<List<UserAuthModel>> GetAllUserAuthAsync()
         {

@@ -43,7 +43,6 @@ namespace SistemaDeTarefas_api_basica_
             });
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
-
             builder.Services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
